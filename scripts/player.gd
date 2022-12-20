@@ -3,6 +3,9 @@ extends Area2D
 const MOVE_SPEED = 150
 const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
+var shot_scene = preload("res://Scenes/Shot.tscn")
+var canshoot = true
+
 
 func _process(delta):
 	# check for screen bounds
@@ -29,3 +32,17 @@ func _process(delta):
 		input_dir.x += 1.0
 
 	position += (delta * MOVE_SPEED) * input_dir
+	
+	# FIRE!
+	if Input.is_key_pressed(KEY_SPACE) and canshoot:
+		canshoot = false
+		get_node("reload_timer").start()
+		var stage_node = get_parent()
+		
+		var shot_instance = shot_scene.instance()
+		shot_instance.position = position
+		stage_node.add_child(shot_instance)
+
+
+func _on_reload_timer_timeout():
+	canshoot = true
