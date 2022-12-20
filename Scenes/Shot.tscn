@@ -15,7 +15,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="Shot" type="Area2D"]
+[node name="Shot" type="Area2D" groups=["shot"]]
 script = ExtResource( 3 )
 
 [node name="damage_zone" type="CollisionShape2D" parent="."]
@@ -23,4 +23,5 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+frame = 1
 playing = true

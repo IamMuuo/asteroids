@@ -4,8 +4,10 @@ const MOVE_SPEED = 150
 const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 var shot_scene = preload("res://Scenes/Shot.tscn")
+var explosion_scene = preload("res://Scenes/explosion.tscn")
 var canshoot = true
 
+signal destroyed
 
 func _process(delta):
 	# check for screen bounds
@@ -46,3 +48,11 @@ func _process(delta):
 
 func _on_reload_timer_timeout():
 	canshoot = true
+
+
+func _on_player_area_entered(area):
+	if area.is_in_group("asteroid"):
+		var explosion_instance = explosion_scene.instance()
+		explosion_instance.position = position
+		queue_free()
+		emit_signal("destroyed")
