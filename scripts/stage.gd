@@ -9,6 +9,8 @@ var asteroid = preload("res://Scenes/Asterioid.tscn")
 
 
 func _ready():
+	
+	randomize()
 	get_node("player").connect("destroyed", self, "_on_player_destoyed")
 	get_node("spawn_timer").connect("timeout", self, "_on_spawn_timer_timeout")
 
