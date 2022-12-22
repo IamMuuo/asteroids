@@ -24,6 +24,7 @@ shape = SubResource( 1 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="reload_timer" type="Timer" parent="."]
@@ -32,6 +33,8 @@ one_shot = true
 
 [node name="stotsfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -30.649
+autoplay = true
 mix_target = 1
 
 [connection signal="area_entered" from="." to="." method="_on_player_area_entered"]

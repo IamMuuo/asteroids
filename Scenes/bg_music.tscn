@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://audio/music/music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://scripts/bg_music.gd" type="Script" id=2]
+
+[node name="bg_music" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -25.639
+script = ExtResource( 2 )
