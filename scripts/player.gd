@@ -5,6 +5,7 @@ const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 var shot_scene = preload("res://Scenes/Shot.tscn")
 var explosion_scene = preload("res://Scenes/explosion.tscn")
+onready var shot_sound = get_node("stotsfx")
 var canshoot = true
 
 signal destroyed
@@ -37,6 +38,7 @@ func _process(delta):
 	
 	# FIRE!
 	if Input.is_key_pressed(KEY_SPACE) and canshoot:
+		shot_sound.play()
 		canshoot = false
 		get_node("reload_timer").start()
 		var stage_node = get_parent()
