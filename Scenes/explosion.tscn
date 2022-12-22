@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/explosion.gd" type="Script" id=1]
 [ext_resource path="res://sprites/explosion.png" type="Texture" id=2]
+[ext_resource path="res://audio/sfx/explode.wav" type="AudioStream" id=3]
 
 [node name="explosion" type="Sprite"]
 texture = ExtResource( 2 )
@@ -11,5 +12,8 @@ script = ExtResource( 1 )
 wait_time = 0.1
 one_shot = true
 autostart = true
+
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="timeout" from="queue_free_timer" to="." method="_on_queue_free_timer_timeout"]
