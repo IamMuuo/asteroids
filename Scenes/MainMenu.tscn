@@ -26,27 +26,27 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="banner" type="Label" parent="."]
 margin_left = 141.0
 margin_right = 180.0
 margin_bottom = 14.0
 text = "INVADERS"
 
-[node name="Button" type="Button" parent="."]
+[node name="start" type="Button" parent="."]
 margin_left = 129.0
 margin_top = 52.0
 margin_right = 193.0
 margin_bottom = 72.0
 text = "START GAME"
 
-[node name="Button2" type="Button" parent="."]
+[node name="settings" type="Button" parent="."]
 margin_left = 129.0
 margin_top = 80.0
 margin_right = 193.0
 margin_bottom = 100.0
 text = "SETTINGS"
 
-[node name="Button3" type="Button" parent="."]
+[node name="quit" type="Button" parent="."]
 margin_left = 129.0
 margin_top = 112.0
 margin_right = 193.0
