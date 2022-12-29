@@ -9,3 +9,10 @@ func _process(delta):
 	
 	if position.x > SCREEN_WIDTH:
 		queue_free()
+
+
+
+
+func _on_Shot_area_entered(area):
+	if area.is_in_group("asteroid"):
+		queue_free()
