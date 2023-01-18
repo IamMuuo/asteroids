@@ -56,5 +56,4 @@ func _on_player_area_entered(area):
 	if area.is_in_group("asteroid"):
 		var explosion_instance = explosion_scene.instance()
 		explosion_instance.position = position
-		queue_free()
 		emit_signal("destroyed")

@@ -1,6 +1,7 @@
 extends Node2D
 
 var score = 0
+var lives = 3
 const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 
@@ -23,8 +24,14 @@ func _input(event):
 		
 		
 func _on_player_destroyed():
-	get_node("ui/retry").show()
-	is_game_over = true
+	if lives <= 0:
+		get_node('player').queue_free()
+		get_node("ui/retry").show()
+		is_game_over = true
+	else:
+		lives -= 1
+		get_node("ui/score").text = "Score: " + str(score) + " Lives: " + str(lives)
+
 
 func _on_spawn_timer_timeout():
 	var asteroid_instance = asteroid.instance()
@@ -34,4 +41,4 @@ func _on_spawn_timer_timeout():
 
 func _on_player_score():
 	score += 1
-	get_node("ui/score").text = "Score: " + str(score)
+	get_node("ui/score").text = "Score: " + str(score) + " Lives: " + str(lives)
