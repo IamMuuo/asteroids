@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/coin_pickup.wav-1acd9f6c2cec7658cbb9fbb7004d914a.sample"
+type="AudioStreamWAV"
+uid="uid://j0l4wj70i72l"
+path="res://.godot/imported/coin_pickup.wav-1acd9f6c2cec7658cbb9fbb7004d914a.sample"
 
 [deps]
 
 source_file="res://audio/sfx/coin_pickup.wav"
-dest_files=[ "res://.import/coin_pickup.wav-1acd9f6c2cec7658cbb9fbb7004d914a.sample" ]
+dest_files=["res://.godot/imported/coin_pickup.wav-1acd9f6c2cec7658cbb9fbb7004d914a.sample"]
 
 [params]
 

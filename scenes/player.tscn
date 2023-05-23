@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://7f16ut20711u"]
+
+[ext_resource type="Texture2D" uid="uid://bjn4kryrori8s" path="res://sprites/player1.png" id="1_vd1gx"]
+[ext_resource type="Texture2D" uid="uid://brjteb3p4xh4m" path="res://sprites/player2.png" id="2_jt1q8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l616i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7abrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vd1gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jt1q8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="player" type="Area2D" groups=["player"]]
+
+[node name="hit_zone" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l616i")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_7abrf")
+frame_progress = 0.399906
+
+[node name="reload_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

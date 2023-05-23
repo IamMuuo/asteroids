@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvhr68wn1xfjf"]
+
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_my1r3"]
+[ext_resource type="Texture2D" uid="uid://400ctk0jgc4k" path="res://sprites/explosion.png" id="1_vg1jw"]
+
+[node name="explosion" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_vg1jw")
+script = ExtResource("1_my1r3")
+
+[node name="queue_free_timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="queue_free_timer" to="." method="_on_queue_free_timer_timeout"]

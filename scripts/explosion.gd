@@ -1,9 +1,16 @@
-extends Sprite
+extends Sprite2D
 
-onready var explosion_sound = get_node("explosion_sfx")
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	explosion_sound.play()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
 
 func _on_queue_free_timer_timeout():
 	queue_free()

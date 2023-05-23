@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgxypwhdbjfqh"]
+
+[ext_resource type="Texture2D" uid="uid://bn14kusx03eq4" path="res://sprites/shot1.png" id="1_j31fu"]
+[ext_resource type="Texture2D" uid="uid://b6i3vtpepp4cc" path="res://sprites/shot2.png" id="2_okqym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0qiy"]
+size = Vector2(14, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aikdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j31fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_okqym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="shot" type="Area2D"]
+
+[node name="hit_zone" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_d0qiy")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aikdr")
+frame_progress = 0.855718
