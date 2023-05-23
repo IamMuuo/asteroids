@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://r688gm0jbu7o"]
+
+[ext_resource type="Texture2D" uid="uid://2r8isqhgrkf0" path="res://sprites/asteroid1.png" id="1_61xvb"]
+[ext_resource type="Texture2D" uid="uid://wghk6sd7h76p" path="res://sprites/asteroid2.png" id="2_iqh3l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sx32"]
+radius = 6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_um8cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_61xvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iqh3l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="asteroid" type="Area2D" groups=["asteroid"]]
+
+[node name="hit_zone" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5sx32")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_um8cj")
+frame_progress = 0.372663
