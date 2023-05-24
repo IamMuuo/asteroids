@@ -3,14 +3,23 @@ const MOVE_SPEED = 150.0
 const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 @onready var animation = get_node("sprite")
-
+var shotscene
+var canshoot = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	animation.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_key_pressed(KEY_SPACE) and  canshoot == true:
+		canshoot = false
+		var stage_node = get_parent()
+		shotscene = preload("res://scenes/shot.tscn").instantiate()
+		shotscene.position = position
+		stage_node.add_child(shotscene)
+		
 	var input_dir = Vector2()
 	if Input.is_key_pressed(KEY_UP):
 		input_dir.y -= 1.0
@@ -34,3 +43,7 @@ func _process(delta):
 		position.y = SCREEN_HEIGHT
 	position+= (delta * MOVE_SPEED) * input_dir
 	
+
+
+func _on_reload_timer_timeout():
+	canshoot = true
