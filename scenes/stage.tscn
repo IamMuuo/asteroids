@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://doper7tfjgggf"]
+
+[ext_resource type="Texture2D" uid="uid://ufynvgcr1iaa" path="res://sprites/background.png" id="1_83ldw"]
+[ext_resource type="PackedScene" uid="uid://7f16ut20711u" path="res://scenes/player.tscn" id="2_rrlbo"]
+[ext_resource type="FontFile" uid="uid://bikgcs0l0w2y1" path="res://fonts/font.ttf" id="3_x0u2i"]
+
+[sub_resource type="Theme" id="Theme_8nn82"]
+Label/colors/font_color = Color(0.0588235, 0.976471, 0.768627, 1)
+Label/fonts/font = ExtResource("3_x0u2i")
+
+[node name="stage" type="Node2D"]
+
+[node name="spawn_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_83ldw")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." instance=ExtResource("2_rrlbo")]
+position = Vector2(14, 84)
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="ui"]
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 49.0
+offset_bottom = 31.0
+theme = SubResource("Theme_8nn82")
+text = "0
+"
+uppercase = true
+
+[node name="retry" type="Label" parent="ui"]
+visible = false
+offset_left = 72.0
+offset_top = 73.0
+offset_right = 112.0
+offset_bottom = 98.0
+theme = SubResource("Theme_8nn82")
+text = "Game OVER
+HIT <Enter> to retry"
+horizontal_alignment = 1
