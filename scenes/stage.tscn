@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://doper7tfjgggf"]
+[gd_scene load_steps=6 format=3 uid="uid://doper7tfjgggf"]
 
 [ext_resource type="Texture2D" uid="uid://ufynvgcr1iaa" path="res://sprites/background.png" id="1_83ldw"]
+[ext_resource type="Script" path="res://scripts/stage.gd" id="1_mgmwv"]
 [ext_resource type="PackedScene" uid="uid://7f16ut20711u" path="res://scenes/player.tscn" id="2_rrlbo"]
 [ext_resource type="FontFile" uid="uid://bikgcs0l0w2y1" path="res://fonts/font.ttf" id="3_x0u2i"]
 
@@ -9,6 +10,7 @@ Label/colors/font_color = Color(0.0588235, 0.976471, 0.768627, 1)
 Label/fonts/font = ExtResource("3_x0u2i")
 
 [node name="stage" type="Node2D"]
+script = ExtResource("1_mgmwv")
 
 [node name="spawn_timer" type="Timer" parent="."]
 autostart = true

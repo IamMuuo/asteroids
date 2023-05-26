@@ -21,7 +21,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="shot" type="Area2D"]
+[node name="shot" type="Area2D" groups=["shot"]]
 script = ExtResource("1_nxi7m")
 
 [node name="hit_zone" type="CollisionShape2D" parent="."]
