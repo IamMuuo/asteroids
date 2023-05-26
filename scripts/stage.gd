@@ -5,10 +5,12 @@ const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 var score = 0
 
+var restart = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_user_signal("score")
 	get_node("spawn_timer").connect("timeout", _on_spawn_timer_timeout,)
+	get_node("player").connect("destroyed", _on_player_destroyed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,3 +26,6 @@ func _on_spawn_timer_timeout():
 func _on_player_score():
 	score += 1
 	get_node("ui/score").text = "Score: " + str(score)
+
+func  _on_player_destroyed():
+	get_node("ui/retry").visible = true

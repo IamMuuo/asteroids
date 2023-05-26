@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://doper7tfjgggf"]
+[gd_scene load_steps=8 format=3 uid="uid://doper7tfjgggf"]
 
 [ext_resource type="Texture2D" uid="uid://ufynvgcr1iaa" path="res://sprites/background.png" id="1_83ldw"]
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_mgmwv"]
@@ -6,9 +6,20 @@
 [ext_resource type="Script" path="res://scripts/background.gd" id="3_5h3u5"]
 [ext_resource type="FontFile" uid="uid://bikgcs0l0w2y1" path="res://fonts/font.ttf" id="3_x0u2i"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dypdl"]
+
 [sub_resource type="Theme" id="Theme_8nn82"]
 Label/colors/font_color = Color(0.0588235, 0.976471, 0.768627, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 8
 Label/fonts/font = ExtResource("3_x0u2i")
+Label/styles/normal = SubResource("StyleBoxEmpty_dypdl")
 
 [node name="stage" type="Node2D"]
 script = ExtResource("1_mgmwv")
@@ -30,8 +41,8 @@ position = Vector2(14, 84)
 [node name="score" type="Label" parent="ui"]
 offset_left = 9.0
 offset_top = 6.0
-offset_right = 49.0
-offset_bottom = 31.0
+offset_right = 40.0
+offset_bottom = 23.0
 theme = SubResource("Theme_8nn82")
 text = "0
 "

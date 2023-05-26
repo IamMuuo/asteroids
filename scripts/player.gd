@@ -3,8 +3,11 @@ const MOVE_SPEED = 150.0
 const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 @onready var animation = get_node("sprite")
+var explosion_scene = preload("res://scenes/explosion.tscn")
 var shotscene
 var canshoot = true
+
+signal  destroyed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -47,3 +50,13 @@ func _process(delta):
 
 func _on_reload_timer_timeout():
 	canshoot = true
+
+
+func _on_area_entered(area):
+	if area.is_in_group("asteroid"):
+		var explosion = explosion_scene.instantiate()
+		explosion.position = position
+		get_parent().add_child(explosion)
+		emit_signal("destroyed")
+		queue_free()
+		
