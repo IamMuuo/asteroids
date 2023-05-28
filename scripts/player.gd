@@ -7,10 +7,12 @@ var explosion_scene = preload("res://scenes/explosion.tscn")
 var shotscene
 var canshoot = true
 
+@export var lives = 3
+
 signal  destroyed
+signal hit
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	animation.play()
 
 
@@ -54,9 +56,13 @@ func _on_reload_timer_timeout():
 
 func _on_area_entered(area):
 	if area.is_in_group("asteroid"):
+		emit_signal("hit")
 		var explosion = explosion_scene.instantiate()
 		explosion.position = position
 		get_parent().add_child(explosion)
-		emit_signal("destroyed")
-		queue_free()
+		lives = lives - 1
+		
+		if lives < 1:
+			emit_signal("destroyed")
+			queue_free()
 		
