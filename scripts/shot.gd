@@ -15,3 +15,9 @@ func _process(delta):
 	if position.x > SCREEN_WIDTH + 8:
 		# delete the bullet
 		queue_free()
+
+
+func _on_area_entered(area):
+	if area.is_in_group("asteroid"):
+		# free the bullet instance
+		queue_free()
