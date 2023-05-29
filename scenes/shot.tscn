@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgxypwhdbjfqh"]
+[gd_scene load_steps=6 format=3 uid="uid://bgxypwhdbjfqh"]
 
 [ext_resource type="Texture2D" uid="uid://bn14kusx03eq4" path="res://sprites/shot1.png" id="1_j31fu"]
+[ext_resource type="Script" path="res://scripts/shot.gd" id="1_nxi7m"]
 [ext_resource type="Texture2D" uid="uid://b6i3vtpepp4cc" path="res://sprites/shot2.png" id="2_okqym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0qiy"]
@@ -20,7 +21,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="shot" type="Area2D"]
+[node name="shot" type="Area2D" groups=["shot"]]
+script = ExtResource("1_nxi7m")
 
 [node name="hit_zone" type="CollisionShape2D" parent="."]
 texture_filter = 1
@@ -30,3 +32,5 @@ shape = SubResource("RectangleShape2D_d0qiy")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aikdr")
 frame_progress = 0.855718
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
