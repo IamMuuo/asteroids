@@ -19,6 +19,7 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_node("pause_menu").visible = true
 		get_tree().paused = true
+	
 
 func _on_spawn_timer_timeout():
 	var asteroid_instance = asteroid.instantiate()
@@ -40,7 +41,7 @@ func  _on_player_destroyed():
 
 
 func _on_quit_pressed():
-	get_tree().exit()
+	get_tree().quit()
 
 
 func _on_resume_pressed():
