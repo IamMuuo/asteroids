@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bcl33uyuyii5s"]
+
+[ext_resource type="FontFile" uid="uid://bikgcs0l0w2y1" path="res://fonts/font.ttf" id="1_j8ovn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03dco"]
+bg_color = Color(0.321569, 0.882353, 0.717647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38tt3"]
+bg_color = Color(0.52549, 0.54902, 0.964706, 1)
+
+[resource]
+Button/fonts/font = ExtResource("1_j8ovn")
+Button/styles/focus = SubResource("StyleBoxFlat_03dco")
+Button/styles/hover = SubResource("StyleBoxFlat_03dco")
+Button/styles/normal = SubResource("StyleBoxFlat_38tt3")
+Button/styles/pressed = SubResource("StyleBoxFlat_03dco")
+Label/colors/font_color = Color(0, 0.937255, 0.827451, 1)
+Label/fonts/font = ExtResource("1_j8ovn")
