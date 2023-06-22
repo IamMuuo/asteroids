@@ -4,6 +4,7 @@ var asteroid = preload("res://scenes/asteroid.tscn")
 const SCREEN_WIDTH = 320
 const SCREEN_HEIGHT = 180
 var score = 0
+var pause_message = "Game paused"
 
 var restart = false
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +39,7 @@ func _on_player_hit():
 # Handle player being destroyed
 func  _on_player_destroyed():
 	get_node("ui/retry").visible = true
+	
 
 
 func _on_quit_pressed():
@@ -47,3 +49,7 @@ func _on_quit_pressed():
 func _on_resume_pressed():
 	get_node("pause_menu").visible = false
 	get_tree().paused = false
+
+
+func _on_retry_pressed():
+	get_tree().change_scene_to_file("res://scenes/stage.tscn")

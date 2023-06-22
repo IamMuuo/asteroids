@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://doper7tfjgggf"]
+[gd_scene load_steps=11 format=3 uid="uid://doper7tfjgggf"]
 
 [ext_resource type="Texture2D" uid="uid://ufynvgcr1iaa" path="res://sprites/background.png" id="1_83ldw"]
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_mgmwv"]
 [ext_resource type="PackedScene" uid="uid://7f16ut20711u" path="res://scenes/player.tscn" id="2_rrlbo"]
 [ext_resource type="Script" path="res://scripts/background.gd" id="3_5h3u5"]
 [ext_resource type="FontFile" uid="uid://bikgcs0l0w2y1" path="res://fonts/font.ttf" id="3_x0u2i"]
+[ext_resource type="Theme" uid="uid://bcl33uyuyii5s" path="res://themes/main_menu.tres" id="6_h0y3c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dypdl"]
 
@@ -17,7 +18,7 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 8
+Label/font_sizes/font_size = 22
 Label/fonts/font = ExtResource("3_x0u2i")
 Label/styles/normal = SubResource("StyleBoxEmpty_dypdl")
 
@@ -30,6 +31,7 @@ Button/fonts/font = ExtResource("3_x0u2i")
 Button/styles/normal = SubResource("StyleBoxFlat_dho3k")
 
 [node name="stage" type="Node2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_mgmwv")
 
 [node name="spawn_timer" type="Timer" parent="."]
@@ -56,16 +58,45 @@ text = "0
 "
 uppercase = true
 
-[node name="retry" type="Label" parent="ui"]
+[node name="retry" type="CanvasLayer" parent="ui"]
 visible = false
-offset_left = 72.0
-offset_top = 73.0
-offset_right = 112.0
-offset_bottom = 98.0
-theme = SubResource("Theme_8nn82")
-text = "Game OVER
-HIT <Enter> to retry"
-horizontal_alignment = 1
+
+[node name="msg" type="Label" parent="ui/retry"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -26.0
+offset_right = 93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_h0y3c")
+text = "Earth needs more heros"
+
+[node name="container" type="VBoxContainer" parent="ui/retry"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_h0y3c")
+
+[node name="retry" type="Button" parent="ui/retry/container"]
+layout_mode = 2
+text = "Retry"
+
+[node name="quit" type="Button" parent="ui/retry/container"]
+layout_mode = 2
+text = "Quit
+"
 
 [node name="pause_menu" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -110,5 +141,18 @@ offset_right = 71.0
 offset_bottom = 32.0
 text = "Resume"
 
+[node name="pauseMsg" type="Label" parent="pause_menu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("6_h0y3c")
+text = "Game Paused"
+
+[connection signal="pressed" from="ui/retry/container/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ui/retry/container/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="pause_menu/CenterContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="pause_menu/CenterContainer/resume" to="." method="_on_resume_pressed"]

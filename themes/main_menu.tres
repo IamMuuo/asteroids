@@ -15,4 +15,5 @@ Button/styles/hover = SubResource("StyleBoxFlat_03dco")
 Button/styles/normal = SubResource("StyleBoxFlat_38tt3")
 Button/styles/pressed = SubResource("StyleBoxFlat_03dco")
 Label/colors/font_color = Color(0, 0.937255, 0.827451, 1)
+Label/font_sizes/font_size = 30
 Label/fonts/font = ExtResource("1_j8ovn")
