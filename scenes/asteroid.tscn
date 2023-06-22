@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://r688gm0jbu7o"]
+[gd_scene load_steps=7 format=3 uid="uid://r688gm0jbu7o"]
 
 [ext_resource type="Texture2D" uid="uid://2r8isqhgrkf0" path="res://sprites/asteroid1.png" id="1_61xvb"]
 [ext_resource type="Script" path="res://scripts/asteroid.gd" id="1_m8deu"]
 [ext_resource type="Texture2D" uid="uid://wghk6sd7h76p" path="res://sprites/asteroid2.png" id="2_iqh3l"]
+[ext_resource type="AudioStream" uid="uid://b54ysai58qn16" path="res://audio/sfx/explosion.ogg" id="4_56igo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5sx32"]
 radius = 6.0
@@ -18,7 +19,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 10.0
 }]
 
 [node name="asteroid" type="Area2D" groups=["asteroid"]]
@@ -31,5 +32,8 @@ shape = SubResource("CircleShape2D_5sx32")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_um8cj")
 frame_progress = 0.372663
+
+[node name="explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_56igo")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

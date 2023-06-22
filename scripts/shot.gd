@@ -3,10 +3,12 @@ const SCREEN_WIDTH = 320
 const MOVE_SPEED = 500
 
 @onready var animation= get_node("sprite")
+@onready var sound = get_node("shot_sound")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation.play()
+	sound.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

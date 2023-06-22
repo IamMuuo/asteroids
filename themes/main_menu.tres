@@ -7,6 +7,7 @@ bg_color = Color(0.321569, 0.882353, 0.717647, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38tt3"]
 bg_color = Color(0.52549, 0.54902, 0.964706, 1)
+corner_detail = 10
 
 [resource]
 Button/fonts/font = ExtResource("1_j8ovn")
