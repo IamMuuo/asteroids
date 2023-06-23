@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvhr68wn1xfjf"]
+[gd_scene load_steps=4 format=3 uid="uid://dvhr68wn1xfjf"]
 
-[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_my1r3"]
 [ext_resource type="Texture2D" uid="uid://400ctk0jgc4k" path="res://sprites/explosion.png" id="1_vg1jw"]
+[ext_resource type="Script" path="res://scenes/explosion.gd" id="2_6as8k"]
+[ext_resource type="AudioStream" uid="uid://b54ysai58qn16" path="res://audio/sfx/explosion.ogg" id="3_you3g"]
 
 [node name="explosion" type="Sprite2D"]
-texture_filter = 1
 texture = ExtResource("1_vg1jw")
-script = ExtResource("1_my1r3")
+script = ExtResource("2_6as8k")
 
 [node name="queue_free_timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 autostart = true
 
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_you3g")
+
 [connection signal="timeout" from="queue_free_timer" to="." method="_on_queue_free_timer_timeout"]
+[connection signal="finished" from="explosion_sfx" to="." method="_on_explosion_sfx_finished"]
