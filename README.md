@@ -1,14 +1,14 @@
-# 🚀 Space Invaders
+# 🚀 Asteroids
 
-This is a classic arcade-style Space Invaders game developed by Erick using the Godot game engine. 🎮👾
+This is a classic arcade-style Asteroid game developed by Erick using the Godot game engine. 🎮👾
 
 ## Game Description
 
-Space Invaders is a 2D shooter game where the player controls a spaceship at the bottom of the screen. The objective is to shoot down waves of descending alien invaders while avoiding their projectiles. The game ends if the aliens reach the bottom of the screen or if the player's spaceship is hit by an alien projectile. The goal is to achieve the highest score possible by destroying as many aliens as you can. 🚀💥👽
+Asteriods is a 2D shooter game where the player controls a spaceship at the left of the screen. The objective is to shoot down waves of descending rocks and alien invaders while avoiding their projectiles. The game ends if the player runs out of lives. The goal is to achieve the highest score possible by destroying as many aliens and rocks as you can. 🚀💥👽
 
 ## Features
 
-- 🎮 Classic Space Invaders gameplay with modern graphics and sound effects.
+- 🎮 Classic Asteriods gameplay with retro graphics and sound effects.
 - 🌟 Multiple levels of increasing difficulty.
 - 💥 Power-ups and bonus items to enhance gameplay.
 - 🏆 High score tracking to compete with friends and beat your own records.
@@ -32,7 +32,6 @@ Space Invaders is a 2D shooter game where the player controls a spaceship at the
 ## Credits
 
 - Game developed by Erick
-- Graphics and sound effects sourced from [Credits for assets used, if applicable]
 
 ## License
 
