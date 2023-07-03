@@ -10,12 +10,16 @@ config_version=5
 
 [application]
 
-config/name="invaders"
+config/name="Asteroids"
 run/main_scene="res://menus/mainmenu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="asteroids"
 config/features=PackedStringArray("4.0")
 boot_splash/show_image=false
 boot_splash/image="res://sprites/background.png"
 config/icon="res://icon.png"
+config/macos_native_icon="res://icon.png"
+config/windows_native_icon="res://icon.png"
 boot_splash/minimum_display_time=1000
 
 [autoload]
