@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bcl33uyuyii5s"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bcl33uyuyii5s"]
 
 [ext_resource type="FontFile" uid="uid://bikgcs0l0w2y1" path="res://fonts/font.ttf" id="1_j8ovn"]
 
@@ -9,6 +9,30 @@ bg_color = Color(0.321569, 0.882353, 0.717647, 1)
 bg_color = Color(0.52549, 0.54902, 0.964706, 1)
 corner_detail = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6hbl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0862745, 0.631373, 0.521569, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_volws"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.698039, 0.694118, 0.686275, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [resource]
 Button/fonts/font = ExtResource("1_j8ovn")
 Button/styles/focus = SubResource("StyleBoxFlat_03dco")
@@ -18,3 +42,7 @@ Button/styles/pressed = SubResource("StyleBoxFlat_03dco")
 Label/colors/font_color = Color(0, 0.937255, 0.827451, 1)
 Label/font_sizes/font_size = 30
 Label/fonts/font = ExtResource("1_j8ovn")
+TextEdit/constants/caret_width = 3
+TextEdit/font_sizes/font_size = 16
+TextEdit/styles/focus = SubResource("StyleBoxFlat_w6hbl")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_volws")
