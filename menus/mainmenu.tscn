@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://mppta5eqbr5m"]
+[gd_scene load_steps=5 format=3 uid="uid://mppta5eqbr5m"]
 
 [ext_resource type="Texture2D" uid="uid://ufynvgcr1iaa" path="res://sprites/background.png" id="1_dwqv5"]
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_xp3o2"]
 [ext_resource type="Theme" uid="uid://bcl33uyuyii5s" path="res://themes/main_menu.tres" id="2_t8rxo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvp14"]
+font_size = 40
 
 [node name="mainmenu" type="CanvasLayer"]
 script = ExtResource("1_xp3o2")
@@ -24,6 +27,7 @@ grow_horizontal = 2
 size_flags_vertical = 0
 theme = ExtResource("2_t8rxo")
 text = "Invaders"
+label_settings = SubResource("LabelSettings_bvp14")
 
 [node name="buttons" type="VBoxContainer" parent="."]
 visible = false
@@ -78,7 +82,6 @@ placeholder_text = "Input your name"
 scroll_smooth = true
 
 [node name="join" type="Button" parent="setup"]
-visible = false
 layout_mode = 2
 text = "Start the Game"
 

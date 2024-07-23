@@ -11,10 +11,13 @@ config_version=5
 [application]
 
 config/name="Asteroids"
+config/description="Defend the Earth!!!!"
+config/version="1.0"
 run/main_scene="res://menus/mainmenu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="asteroids"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.2")
+boot_splash/bg_color=Color(0.447059, 0.305882, 0.568627, 1)
 boot_splash/show_image=false
 boot_splash/image="res://sprites/background.png"
 config/icon="res://icon.png"
@@ -29,13 +32,12 @@ BgMusic="*res://scenes/bg_music.tscn"
 [display]
 
 window/size/viewport_width=1024
-window/size/viewport_height=720
-window/size/mode=4
+window/size/viewport_height=600
+window/size/resizable=false
 window/size/borderless=true
 window/size/window_width_override=1024
 window/size/window_height_override=729
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
 
 [gui]
 

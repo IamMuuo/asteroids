@@ -43,5 +43,4 @@ func _on_join_pressed():
 		print_debug(FileAccess.get_open_error())
 		
 	# display the intro text
-	
-	pass
+	get_tree().change_scene_to_file("res://scenes/stage.tscn")
